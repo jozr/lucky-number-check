@@ -1,22 +1,31 @@
 def luck_check(ticket_input)
 
-arr = []
-ticket_arr = ticket_input.to_s.split('')
-ticket_arr.each do |x|
-	p x
-	ticket_arr << x.to_i
-end
-p ticket_arr
+	arr = []
+	ticket_arr = ticket_input.to_s.split('').map { |index| index.to_i }
 
-	if (ticket_arr.length % 2 == 0)
-		half = ticket_arr.length / 2
-		if ticket_arr.last(half).sum == ticket_arr.first(half).sum
-			return true
+	ticket_arr.each do |index|
+		arr << index
+	end
+
+	if (arr.length % 2 == 0)
+		half = arr.length / 2
+		first_sum = 0
+		last_sum = 0
+		arr.first(half).each do |x|
+			first_sum += x
+		end
+		arr.last(half).each do |x|
+			last_sum += x
 		end
 	else
 		return false
 	end
 
+	if last_sum == first_sum
+		p true
+	else
+		p false
+	end
 end
 
-luck_check(3356)
+luck_check(3266)
