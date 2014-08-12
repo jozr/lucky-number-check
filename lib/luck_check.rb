@@ -19,11 +19,8 @@ def luck_check(ticket_input)
 		last_sum += x
 	end
 
-	if last_sum == first_sum
-		p true
-	else
-		p false
-	end
+	last_sum == first_sum ? true : false
+
 end
 
 luck_check(31443322)
