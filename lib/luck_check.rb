@@ -18,7 +18,16 @@ def luck_check(ticket_input)
 			last_sum += x
 		end
 	else
-		return false
+		arr.delete(arr[arr.length/2.0])
+		half = arr.length / 2
+		first_sum = 0
+		last_sum = 0
+		arr.first(half).each do |x|
+			first_sum += x
+		end
+		arr.last(half).each do |x|
+			last_sum += x
+		end
 	end
 
 	if last_sum == first_sum
@@ -28,4 +37,4 @@ def luck_check(ticket_input)
 	end
 end
 
-luck_check(3266)
+luck_check(32166)
