@@ -4,7 +4,7 @@ def luck_check(ticket_input)
 
 	half = ticket_nums.length / 2
 
-	first_sum = 0
+	counter = 0
 	ticket_nums.first(half).each { |num| first_sum += num }
 
 	last_sum = 0
@@ -12,5 +12,3 @@ def luck_check(ticket_input)
 
 	last_sum == first_sum ? true : false
 end
-
-luck_check(55)
