@@ -1,16 +1,16 @@
 def luck_check(ticket_input)
 
-	ticket_arr = ticket_input.to_s.split('').map { |i| i.to_i }
+	ticket_nums = ticket_input.to_s.split('').map { |num| num.to_i }
 
-	arr = []
-	ticket_arr.each { |i| arr << i }
+	half = ticket_nums.length / 2
 
-	half = arr.length / 2
+	first_sum = 0
+	ticket_nums.first(half).each { |num| first_sum += num }
 
-	counter = 0
-	arr.first(half).each { |i| first_sum += i }
-	arr.last(half).each { |i| last_sum += i }
+	last_sum = 0
+	ticket_nums.last(half).each { |num| last_sum += num }
 
 	last_sum == first_sum ? true : false
-
 end
+
+luck_check(55)
